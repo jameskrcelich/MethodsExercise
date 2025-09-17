@@ -120,9 +120,5 @@ namespace MethodsExercise
             }
             return total;
         }
-        public static int Divide( int num1, int num2 )
-        {
-            return num1 / num2;
-        }
     }
 }
