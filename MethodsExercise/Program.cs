@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel;
+using System.Globalization;
 using System.Numerics;
 
 namespace MethodsExercise
@@ -35,9 +36,9 @@ namespace MethodsExercise
 
             // print math
             Console.WriteLine($"\n2 + 3 + 4 + 5 + 6 = {Add(2,3,4,5,6)}");
-            Console.WriteLine($"5 - 3 = {Subtract( 5, 3 )}");
-            Console.WriteLine($"2 * 3 = {Multiply( 2, 3 )}");
-            Console.WriteLine($"6 / 3 = {Divide( 6, 3 )}");
+            Console.WriteLine($"5 - 1 - 2 = {Subtract(5,1,2)}");
+            Console.WriteLine($"2 * 3 * 2 = {Multiply(2,3,2)}");
+            Console.WriteLine($"12 / 2 / 2 = {Divide( 12, 2, 2 )}");
 
         }
 
@@ -51,24 +52,74 @@ namespace MethodsExercise
         
         public static int Add(params int[] numbers )
         {
-            int sum = 0;
-
+            int  sum = 0;
+            
             foreach (int number in numbers)
             {
                 sum += number;
             }
             return sum;
         }
-        public static int Subtract(int num1, int num2 )
+        
+        public static int Subtract(params int[] numbers)
         {
-            return num1 - num2;
+            int  total = 0;
+            bool firstIteration = true;
 
-        }
-        public static int Multiply(int num1, int num2)
-        {
-            return num1* num2;
+            foreach (int number in numbers)
+            {
+                if (firstIteration == true)
+                {
+                    firstIteration = false;
+                    total = number;
+                }
+                else
+                {
+                    total -= number;
+                }
+            }
+            return total;
         }
         
+        public static int Multiply(params int[] numbers)
+        {
+            int  total = 0;
+            bool firstIteration = true;
+
+            foreach (int number in numbers)
+            {
+                if (firstIteration == true)
+                {
+                    firstIteration = false;
+                    total = number;
+                }
+                else
+                {
+                    total *= number;
+                }
+            }
+            return total;
+        }
+        
+        public static int Divide(params int[] numbers)
+        {
+            int  total = 0;
+            bool firstIteration = true;
+
+            foreach (int number in numbers)
+            {
+                if (firstIteration == true)
+                {
+                    firstIteration = false;
+                    total = number;
+                }
+                else
+                {
+                    total /= number;
+                }
+            }
+            return total;
+        }
         public static int Divide( int num1, int num2 )
         {
             return num1 / num2;
