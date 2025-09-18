@@ -6,7 +6,7 @@ namespace MethodsExercise
 {
     public class Program
     {
-        public static void getInput()
+        public static void GetInput()
         {
             string verse1, verse2, verse3, verse4;
 
@@ -16,9 +16,6 @@ namespace MethodsExercise
             Console.WriteLine($"What is your favorite color?");
             string favColor = Console.ReadLine(); // input
 
-            // Console.WriteLine($"What is your favorite animal?");
-            // string favAnimal = Console.ReadLine(); // input
-
             // Poem verses
             verse1 = "Hickory Dickory Dock";
             verse2 = userName + " forgot to set the clock";
@@ -26,13 +23,13 @@ namespace MethodsExercise
             verse4 = "Silly me I'm late for work";
 
             // Print poem
-            printOutput(verse1, verse2, verse3, verse4);
+            PrintOutput(verse1, verse2, verse3, verse4);
         }
 
         static void Main(string[] args)
         {
             // get input from user and print story
-            getInput();
+            GetInput();
 
             // print math
             Console.WriteLine($"\n2 + 3 + 4 + 5 + 6 = {Add(2,3,4,5,6)}");
@@ -42,7 +39,7 @@ namespace MethodsExercise
 
         }
 
-        public static void printOutput(params string[] verses)
+        public static void PrintOutput(params string[] verses)
         {
             foreach (string verse in verses)
             {
